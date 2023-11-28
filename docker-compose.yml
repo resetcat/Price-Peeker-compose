@@ -1,0 +1,15 @@
+version: '3'
+services:
+  angular-app:
+    build:
+      context: ./price-peeker-front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+  
+  nestjs-app:
+    build:
+      context: ./price-peeker
+      dockerfile: Dockerfile
+    ports:
+      - "3080:3080"

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: https://github.com/resetcat/Price-Peeker-front.git
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+
+  backend:
+    build:
+      context: https://github.com/resetcat/Price-Peeker.git
+      dockerfile: Dockerfile
+    ports:
+      - "3080:3080"
