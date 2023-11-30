@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   angular-app:
     build:
@@ -6,10 +6,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-  
+    networks:
+      - app-network
+
   nestjs-app:
     build:
       context: ./price-peeker
       dockerfile: Dockerfile
     ports:
       - "3080:3080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
